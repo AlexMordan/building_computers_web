@@ -1,0 +1,21 @@
+<div style="
+  margin: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 100%;"
+>
+  <form [formGroup]="form">
+   <mat-form-field>
+      <input formControlName="login" name="login" matInput placeholder="login">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input formControlName="password" name="password" matInput placeholder="password">
+    </mat-form-field>
+  </form>
+  <button style = "
+    width: 100px;
+    height: 50px;
+  " mat-raised-button (click)="login()" color="primary">Sign In</button>
+</div>

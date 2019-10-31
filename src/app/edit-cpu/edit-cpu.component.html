@@ -1,0 +1,88 @@
+<h2 mat-dialog-title style="text-align: center;">{{action === FORM_ACTION.ADD ? 'Create CPU' : 'EDIT CPU'}}</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="form">
+      <mat-form-field>
+        <input formControlName="name" name="Name" matInput placeholder="Name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="manufacturer" name="Manufacturer" matInput placeholder="Manufacturer">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="year" name="Year" matInput placeholder="Year">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="processor_number" name="Processor number" matInput placeholder="Processor number">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="lithography" name="Lithography" matInput placeholder="Lithography">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="of_cores" name="Of Cores" matInput placeholder="Of Cores">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="of_threads" name="Of Threads" matInput placeholder="Of Threads">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="processor_base_frequency" name="Processor base frequency" matInput placeholder="Processor basefrequency">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="max_turbo_frequency" name="Max turbo frequency" matInput placeholder="Max turbo frequency">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="cache" name="Cache" matInput placeholder="Cache">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="tdp" name="TDP" matInput placeholder="TDP">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="max_memory_size" name="Max memory size" matInput placeholder="Max memory size">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="memory_types" name="Memory types" matInput placeholder="Memory types">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="processor_graphics" name="Processor graphics" matInput placeholder="Processor graphics">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="sockets_supported" name="Sockets supported" matInput placeholder="Sockets supported">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="dimensions" name="Dimensions" matInput placeholder="Dimensions">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="price" name="Price" matInput placeholder="Price">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="status" name="Status" matInput placeholder="Status">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="description" type="text" rows="3" name="Processor graphics" matInput placeholder="description">
+      </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button [mat-dialog-close]="false">CANCEL</button>
+  <button *ngIf="action === FORM_ACTION.EDIT" mat-raised-button (click)="delete()" color="accent">Delete</button>
+  <button mat-raised-button (click)="save()" color="primary">Save</button>
+</mat-dialog-actions>

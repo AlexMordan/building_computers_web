@@ -1,0 +1,27 @@
+<h2 mat-dialog-title style="text-align: center;">{{action === FORM_ACTION.ADD ? 'Create new Client' : 'Edit Client'}}</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="form">
+      <mat-form-field>
+        <input formControlName="full_name" name="Full name" matInput placeholder="Full name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="phone" name="Phone" matInput placeholder="Phone">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="email" name="Email" matInput placeholder="Email">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="description" name="Description" matInput placeholder="Description">
+      </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button [mat-dialog-close]="false">CANCEL</button>
+  <button *ngIf="action === FORM_ACTION.EDIT" mat-raised-button (click)="delete()" color="accent">Delete</button>
+  <button mat-raised-button (click)="save()" color="primary">Save</button>
+</mat-dialog-actions>

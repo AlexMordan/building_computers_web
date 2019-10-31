@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+*{
+    padding: 0;
+    margin: 0;
+}
+html {
+    height: 100%;
+    background:#e0e8f1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    line-height: 1.2;
+    min-width: 370px;
+}
+footer {
+    background-color: #424242;
+    color: #BDBDBD;
+    display: flex;
+    height: 60px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+footer span {
+    padding: 8px;
+    font-size: 14px;
+}
+footer a {
+    color: #2196f3;
+}
+mat-toolbar {
+    height: 128px !important;
+}

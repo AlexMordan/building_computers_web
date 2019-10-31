@@ -1,0 +1,61 @@
+<h2 mat-dialog-title style="text-align: center;">{{action === FORM_ACTION.ADD ? 'Create new memory' : 'Edit'}}</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="form">
+
+      <mat-form-field>
+        <input formControlName="name" name="Name" matInput placeholder="name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="manufacturer" name="Manufacturer" matInput placeholder="manufacturer">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="year" name="Year" matInput placeholder="year">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="dimensions" name="Dimensions" matInput placeholder="Dimensions">
+      </mat-form-field>
+
+      <mat-form-field>
+          <input formControlName="size_memory" name="Size memory" matInput placeholder="Size memory">
+      </mat-form-field>
+
+      <mat-form-field>
+          <input formControlName="status" name="Status" matInput placeholder="Status">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="description" name="Description" matInput placeholder="Description">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="frequency" name="Frequency" matInput placeholder="Frequency">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="memory_types" name="Memory_types" matInput placeholder="Memory types">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="form_factor" name="Form factor" matInput placeholder="Form factor">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="price" name="Price" matInput placeholder="Price">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="specifications" name="Specifications" matInput placeholder="Specifications">
+      </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button [mat-dialog-close]="false">CANCEL</button>
+  <button *ngIf="action === FORM_ACTION.EDIT" mat-raised-button (click)="delete()" color="accent">Delete</button>
+  <button mat-raised-button (click)="save()" color="primary">Save</button>
+</mat-dialog-actions>

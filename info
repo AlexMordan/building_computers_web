@@ -1,0 +1,2 @@
+ng generate component [name] --module app
+git push heroku master

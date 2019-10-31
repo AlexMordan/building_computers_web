@@ -1,0 +1,92 @@
+<h2 mat-dialog-title style="text-align: center;">{{action === FORM_ACTION.ADD ? 'Create new Product' : 'Edit Client'}}</h2>
+<mat-dialog-content>
+  <form [formGroup]="form">
+      <mat-form-field>
+        <input formControlName="count" name="Count" matInput placeholder="Count">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="status" name="Status" matInput placeholder="Status">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text" placeholder="Select Client" matInput formControlName="control_client" [matAutocomplete]="client">
+        <mat-autocomplete #client="matAutocomplete">
+          <mat-option *ngFor="let option of filteredClient | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text" placeholder="Select CASE" matInput formControlName="control_case" [matAutocomplete]="case">
+        <mat-autocomplete #case="matAutocomplete">
+          <mat-option *ngFor="let option of filteredCase | async" [value]="option">
+              {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+          <input type="text" placeholder="Select Motherboard" matInput formControlName="control_motherboard" [matAutocomplete]="motherboard">
+          <mat-autocomplete #motherboard="matAutocomplete">
+            <mat-option *ngFor="let option of filteredMotherboard | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input type="text" placeholder="Select CPU" matInput formControlName="control_cpu" [matAutocomplete]="cpu">
+        <mat-autocomplete #cpu="matAutocomplete">
+          <mat-option *ngFor="let option of filteredCpu | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+          <input type="text" placeholder="Select Memory" matInput formControlName="control_memory" [matAutocomplete]="memory">
+          <mat-autocomplete #memory="matAutocomplete">
+            <mat-option *ngFor="let option of filteredMemory | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+          <input type="text" placeholder="Select SSD" matInput formControlName="control_ssd" [matAutocomplete]="ssd">
+          <mat-autocomplete #ssd="matAutocomplete">
+            <mat-option *ngFor="let option of filteredSSD | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+          <input type="text" placeholder="Select PowerSupply" matInput formControlName="control_power" [matAutocomplete]="power">
+          <mat-autocomplete #power="matAutocomplete">
+            <mat-option *ngFor="let option of filteredPowerSupply | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+          <input type="text" placeholder="Select Video Cards" matInput formControlName="control_video" [matAutocomplete]="video">
+          <mat-autocomplete #video="matAutocomplete">
+            <mat-option *ngFor="let option of filteredVideo | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+      </mat-form-field>
+
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button [mat-dialog-close]="false">CANCEL</button>
+  <button *ngIf="action === FORM_ACTION.EDIT" mat-raised-button (click)="delete()" color="accent">Delete</button>
+  <button mat-raised-button (click)="save()" color="primary">Save</button>
+</mat-dialog-actions>
